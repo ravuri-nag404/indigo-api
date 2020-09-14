@@ -1,0 +1,12 @@
+{
+               "ID": "201",
+               "airline": "AirIndia",
+               "flightCode": "AI201",
+               "fromAirportCode": "hyd",
+               "toAirportCode": "bang",
+               "departureDate": "?",
+               "emptySeats": "0",
+               "totalSeats": "200",
+               "price": "199",
+               "planeType": "AirIndia 737"
+            }

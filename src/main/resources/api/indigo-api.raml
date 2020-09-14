@@ -1,0 +1,49 @@
+#%RAML 1.0
+title: indigo-api
+baseUri: http://localhost:8081/api
+types:
+  flights: !include datatypes/indigoResponse.raml
+  airindiaflights: !include datatypes/airindiaResponse.raml
+/indigoflights:
+  get:
+    queryParameters:
+      from:
+        example: hyd
+      to:
+        example: bang
+      doj:
+        example: 13-09-2020
+            
+    responses:
+          200:
+            body:
+              application/json:
+                type: flights[]
+                example: !include examples/indigoFlightsExample.raml
+
+  /{from}/{to}/{doj}:
+    get:
+      responses:
+        200:
+          body:
+            application/json:
+              type: flights[]
+              example: !include examples/indigoFlightsExample.raml
+
+/airindia:
+  get:
+    queryParameters:
+      from:
+        example: hyd
+      to:
+        example: bang
+      doj:
+        example: 13-09-2020
+            
+    responses:
+          200:
+            body:
+              application/json:
+                type: airindiaflights[]
+                example: !include examples/airindiaResponseExample.raml
+                   
